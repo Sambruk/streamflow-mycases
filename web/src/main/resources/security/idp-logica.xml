@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<md:EntitiesDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+	ID="https://m10-mg-local.funktionstjanster.se/samlv2/idp/metadata"
+	cacheDuration="PT12H0M0.000S" validUntil="2010-09-16T19:49:27.430Z">
+	<md:EntityDescriptor
+		entityID="https://m10-mg-local.funktionstjanster.se/samlv2/idp/metadata/0">
+		<md:IDPSSODescriptor WantAuthnRequestsSigned="false"
+			protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+			<md:KeyDescriptor use="signing">
+				<ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:X509Data>
+						<ds:X509Certificate>MIIE+TCCA+GgAwIBAgIDAqnEMA0GCSqGSIb3DQEBBQUAMDwxCzAJBgNVBAYTAlVTMRcwFQYDVQQKEw5HZW9UcnVzdCwgSW5jLjEUMBIGA1UEAxMLUmFwaWRTU0wgQ0EwHhcNMTEwODAyMjM1ODI4WhcNMTQxMDA0MDgxNjI3WjCB8zEpMCcGA1UEBRMgNzlGUGVSWVhOT0ttLWNOSmxjYm83aTdzMzVIOTNHMmQxCzAJBgNVBAYTAlNFMR8wHQYDVQQKDBYqLmZ1bmt0aW9uc3RqYW5zdGVyLnNlMRMwEQYDVQQLEwpHVDU5MzM1NzUzMTEwLwYDVQQLEyhTZWUgd3d3LnJhcGlkc3NsLmNvbS9yZXNvdXJjZXMvY3BzIChjKTExMS8wLQYDVQQLEyZEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQgLSBSYXBpZFNTTChSKTEfMB0GA1UEAwwWKi5mdW5rdGlvbnN0amFuc3Rlci5zZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKoQY1RrIxhIElWcodEQYwNT8hcLQI9iE1mJXabEC+wjQYVjdykTUTWkaS/fV1Fwl9Cjep7wGbrl9HDUk/PUAFSiHbqrDBioLYGLkgJeRZz9N/6fA7KoN5KUlPy3Rl6kUieUTPOVS+30Vv5HA3ENmTjA/932yb37sDK+e40qcI1JYPJDiNSgDzjNMLPyeoEXWwXE0DfgHNcWZEJl5ID3l6eFniNuozwCRccg1PYE557n9irzJTQ4QFFPFvTH52xhFit84sVelxGOTMpGutNmJy1h6n2GC3B4hCUkaf1a53uAxSIUOGmr95gnP3GS36pX9Md8jec7Ff3w3dqlxpdC9Q8CAwEAAaOCAUowggFGMB8GA1UdIwQYMBaAFGtpPWoYQkrdjwJlOf01JIZ4kRYwMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwNwYDVR0RBDAwLoIWKi5mdW5rdGlvbnN0amFuc3Rlci5zZYIUZnVua3Rpb25zdGphbnN0ZXIuc2UwQwYDVR0fBDwwOjA4oDagNIYyaHR0cDovL3JhcGlkc3NsLWNybC5nZW90cnVzdC5jb20vY3Jscy9yYXBpZHNzbC5jcmwwHQYDVR0OBBYEFNneKFamkcpoMac35b0Mdv1xWybKMAwGA1UdEwEB/wQCMAAwSQYIKwYBBQUHAQEEPTA7MDkGCCsGAQUFBzAChi1odHRwOi8vcmFwaWRzc2wtYWlhLmdlb3RydXN0LmNvbS9yYXBpZHNzbC5jcnQwDQYJKoZIhvcNAQEFBQADggEBAFg11w31DlRR/HlJjJnJelWi0iDcSU5LHR6rIKexugjU92CaIq6m+hHwHBTGjI5dqgpi/zkeiD/WHeRnqEWlk89n94hg+VNo96t+Ob61vYTqozCBXggavqF/npXVHdzDY7w7PFVapY3xyNfWBrCzs8N8+UN9fNvlx6sMOkWHIwGJyA6EeSBl/TVQaBJvJNjjpI9DjZePVJhP3e3WqevURGP5kEFadTT8uYSeSXmWAsvK0K/Sh40C0wp4fTLlKlTKvsq7nAsH8UefDhjFLOuCATPpB3Ix4aMEyOnHohBLY9rV+1nQOUGEUNFVbpJ5j4HShpM22vf5ndLgBf5yGgBClzo=
+						</ds:X509Certificate>
+					</ds:X509Data>
+					<ds:KeyName>
+						IDP Funktionstjanster-2011-08-20.chain.funktionstjanster.se.crt
+						</ds:KeyName>
+				</ds:KeyInfo>
+			</md:KeyDescriptor>
+			<md:SingleLogoutService
+				Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+				Location="https://m10-mg-local.funktionstjanster.se/samlv2/idp/sloreq"
+				ResponseLocation="https://m10-mg-local.funktionstjanster.se/samlv2/idp/sloresp" />
+			<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient
+			</md:NameIDFormat>
+			<md:SingleSignOnService
+				Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://m10-mg-local.funktionstjanster.se/samlv2/idp/req" />
+			<md:SingleSignOnService
+				Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+				Location="https://m10-mg-local.funktionstjanster.se/samlv2/idp/req" />
+		</md:IDPSSODescriptor>
+	</md:EntityDescriptor>
+</md:EntitiesDescriptor>

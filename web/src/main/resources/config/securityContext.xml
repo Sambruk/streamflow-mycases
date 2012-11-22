@@ -103,10 +103,11 @@
 		SAML messages -->
 	<beans:bean id="samlAuthenticationProvider"
 		class="org.springframework.security.saml.SAMLAuthenticationProvider">
-		<!-- OPTIONAL property: can be used to store/load user data after login -->
-		<!-- <property name="userDetails" ref="bean" /> -->
+		<beans:property name="userDetails" ref="streamflowSAMLUserDetailsService" />
 	</beans:bean>
 
+	<beans:bean id="streamflowSAMLUserDetailsService" class="com.jayway.surface.mycases.security.StreamflowSAMLUserDetailsService"/>
+	
 	<!-- Logger for SAML messages and events -->
 	<beans:bean id="samlLogger"
 		class="org.springframework.security.saml.log.SAMLDefaultLogger" />

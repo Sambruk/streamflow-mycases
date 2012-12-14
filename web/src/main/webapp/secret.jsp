@@ -1,3 +1,12 @@
+<%--
+
+    Copyright 2009-2012 Jayway Products AB. All Rights Reserved by Jayway Products AB.
+
+    The content of this file is property of Jayway Products AB, org no 556777-9896, with the address
+    Hans Michelsensgatan 9, SE-211 20 Malmö, Sweden. Any unauthorized review, use, disclosure
+    or distribution is prohibited.
+
+--%>
 <%@ page import="com.jayway.surface.mycases.security.StreamflowEndUser" %>
 <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

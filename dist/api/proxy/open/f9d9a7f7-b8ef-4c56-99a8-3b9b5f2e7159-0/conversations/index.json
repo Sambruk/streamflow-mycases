@@ -1,0 +1,15 @@
+// http://localhost:8090/streamflow/surface/customers/197606030001/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/index
+{"links":[
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.conversation.ConversationDTO",
+        "classes":null,
+        "href":"f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d",
+        "id":"f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d",
+        "rel":null,
+        "text":"Testkonversation",
+        "creationDate":"2012-11-13T09:05:43.431Z",
+        "creator":"Henrik",
+        "messages":3,
+        "participants":1
+    }
+]}

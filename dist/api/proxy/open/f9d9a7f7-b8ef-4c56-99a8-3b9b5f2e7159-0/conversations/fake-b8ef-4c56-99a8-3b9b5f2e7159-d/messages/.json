@@ -1,0 +1,32 @@
+{"commands":[
+    {
+        "classes":"command",
+        "href":"createmessage",
+        "id":"createmessage",
+        "rel":"createmessage",
+        "text":"Createmessage"
+    }
+], "index":{
+    "_type":"se.streamsource.dci.value.link.LinksValue",
+    "links":[
+        {
+            "_type":"se.streamsource.streamflow.api.workspace.cases.conversation.MessageDTO",
+            "classes":null,
+            "href":"fake-b8ef-4c56-99a8-3b9b5f2e7159-17/",
+            "id":"fake-b8ef-4c56-99a8-3b9b5f2e7159-17",
+            "rel":null,
+            "text":"Jo men visst bla bla bla",
+            "createdOn":"2011-08-13T09:06:29.333Z",
+            "hasAttachments":false,
+            "sender":"Andreas"
+        }
+    ]
+}, "queries":[
+    {
+        "classes":"query",
+        "href":"index",
+        "id":"index",
+        "rel":"index",
+        "text":"Index"
+    }
+], "resources":[]}

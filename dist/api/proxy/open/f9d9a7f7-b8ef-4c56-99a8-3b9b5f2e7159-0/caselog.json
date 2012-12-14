@@ -1,0 +1,15 @@
+{"links":[
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.caselog.CaseLogEntryDTO",
+        "classes":null,
+        "href":"",
+        "id":"",
+        "rel":null,
+        "text":"Skapade något",
+        "caseLogType":"system",
+        "creationDate":"2012-10-26T14:07:46.797Z",
+        "creator":"Andreas",
+        "message":"blabla bla bla bla blalalslasdladsldasldsaldasldask",
+        "myPagesVisibility":true
+    }
+]}

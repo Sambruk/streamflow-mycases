@@ -1,0 +1,54 @@
+{"commands":[
+    {
+        "classes":"command",
+        "href":"createmessage",
+        "id":"createmessage",
+        "rel":"createmessage",
+        "text":"Createmessage"
+    }
+], "index":{
+    "_type":"se.streamsource.dci.value.link.LinksValue",
+    "links":[
+        {
+            "_type":"se.streamsource.streamflow.api.workspace.cases.conversation.MessageDTO",
+            "classes":null,
+            "href":"f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-17/",
+            "id":"f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-17",
+            "rel":null,
+            "text":"Ett första meddelande...",
+            "createdOn":"2012-11-13T09:06:29.333Z",
+            "hasAttachments":false,
+            "sender":"MyName"
+        },
+        {
+            "_type":"se.streamsource.streamflow.api.workspace.cases.conversation.MessageDTO",
+            "classes":null,
+            "href":"975febee-9bac-405e-bdf2-105d84b3d22f-1/",
+            "id":"975febee-9bac-405e-bdf2-105d84b3d22f-1",
+            "rel":null,
+            "text":"Lorizzle ipsizzle dolizzle sit amizzle, adipiscing . Nullam ghetto velizzle, bizzle volutpizzle, i'm in the shizzle mammasay mammasa mamma oo sa, get down get down vizzle, fo shizzle. Pellentesque egizzle tortor. Sed erizzle. Doggy shiz dolor brizzle turpis tempizzle hizzle. pellentesque nibh izzle turpizzle. Yippiyo izzle tortor. Pellentesque eleifend rhoncizzle nisi. In gizzle dang dawg dictumst. Hizzle yippiyo. Curabitur tellizzle urna, pretizzle eu, pimpin' ac, shiz vitae, nunc. Bizzle suscipit. Bling bling semper shit sed fo shizzle.",
+            "createdOn":"2012-11-14T08:29:43.682Z",
+            "hasAttachments":false,
+            "sender":"MyName"
+        },
+        {
+            "_type":"se.streamsource.streamflow.api.workspace.cases.conversation.MessageDTO",
+            "classes":null,
+            "href":"975febee-9bac-405e-bdf2-105d84b3d22f-5/",
+            "id":"975febee-9bac-405e-bdf2-105d84b3d22f-5",
+            "rel":null,
+            "text":"Vad händer om jag skriver något här?",
+            "createdOn":"2012-11-14T08:33:57.263Z",
+            "hasAttachments":false,
+            "sender":"MyName"
+        }
+    ]
+}, "queries":[
+    {
+        "classes":"query",
+        "href":"index",
+        "id":"index",
+        "rel":"index",
+        "text":"Index"
+    }
+], "resources":[]}

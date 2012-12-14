@@ -1,0 +1,23 @@
+{"commands":[], "index":null, "queries":[], "resources":[
+    {
+        "classes":"resource",
+        "href":"profile/",
+        "id":"profile",
+        "rel":"profile",
+        "text":"Profile"
+    },
+    {
+        "classes":"resource",
+        "href":"open/",
+        "id":"open",
+        "rel":"open",
+        "text":"Open"
+    },
+    {
+        "classes":"resource",
+        "href":"closed/",
+        "id":"closed",
+        "rel":"closed",
+        "text":"Closed"
+    }
+]}

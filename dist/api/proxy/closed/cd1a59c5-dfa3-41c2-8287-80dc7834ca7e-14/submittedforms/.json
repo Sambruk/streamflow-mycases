@@ -1,0 +1,12 @@
+{"commands":[], "index":{
+    "_type":"se.streamsource.dci.value.link.LinksValue",
+    "links":[]
+}, "queries":[
+    {
+        "classes":"query",
+        "href":"index",
+        "id":"index",
+        "rel":"index",
+        "text":"Index"
+    }
+], "resources":[]}

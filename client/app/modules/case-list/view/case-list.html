@@ -1,0 +1,95 @@
+
+<div ng-include src="modules/common/partials/navigationbar.html"></div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="span9">
+            <!--Body content-->
+            <h3>Öppna Ärenden</h3>
+            <table class="table table-condensed table-hover" ng-controller="caseListOpenCtrl">
+                <thead>
+                <tr>
+                    <th>Ärende Id</th>
+                    <th>Rubrik</th>
+                    <th>Skapat</th>
+                    <th>Ärendetyp</th>
+                    <th>Handläggs av</th>
+                </tr>
+                </thead>
+                <tbody class="open-cases">
+
+                <tr ng-repeat="case in cases" ng-click="openCaseClick(case.href)">
+                    <td><a href="#/open/{{case.href}}">{{case.caseId}}</a></td>
+                    <td>{{case.text}}</td>
+                    <td>{{case.creationDate | sfDate}}</td>
+                    <td>{{case.caseType}}</td>
+                    <td>{{case.project}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <br/><br/>
+
+            <h3>Stängda Ärenden</h3>
+            <table class="table table-condensed table-hover" ng-controller="caseListClosedCtrl">
+                <thead>
+                <tr>
+                    <th>Ärende Id</th>
+                    <th>Rubrik</th>
+                    <th>Skapat</th>
+                    <th>Ärendetyp</th>
+                    <th>Handläggs av</th>
+                </tr>
+                </thead>
+                <tbody class="closed-cases">
+                <tr ng-repeat="case in cases" ng-click="closedCaseClick(case.href)">
+                    <td><a href="#/closed/{{case.href}}">{{case.caseId}}</a></td>
+                    <td>{{case.text}}</a></td>
+                    <td>{{case.creationDate | sfDate}}</td>
+                    <td>{{case.caseType}}</td>
+                    <td>{{case.project}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="span3 profile" ng-controller="caseListContactCtrl">
+            <h3>Profil</h3>
+
+            <strong>{{profile.name}}</strong><br/>
+            {{profile.address}}<br/>
+            {{profile.zipCode}} &nbsp {{profile.city}}
+            <br/><br/>
+
+            <div ng-switch on="editcontactinfo">
+
+                <div id="infoarea" ng-switch-when="false">
+                    {{profile.phoneNumber}}<br/>
+                    <a href="mailto:{{profile.emailAddress}}">{{profile.emailAddress}}</a>
+                    <br/><br/>
+                    <button id="profile-change-button" class="btn btn-small" ng-click="change()">Ändra</button>
+                    <span id="feedback">{{feedbacktext}}</span>
+                </div>
+
+                <div id="infoareaedit" ng-switch-when="true">
+                    <form name='infoform'>
+                        <fieldset>
+                            <label>Telefonnummer</label>
+                            <input ng-model="profileEdit.phone">
+                            <label>Epostadress</label>
+                            <input ng-model="profileEdit.email">
+                            <br/>
+                            <br/>
+                            <button id="profile-reset-button" class="btn btn-small" ng-click="reset()" ng-disabled="showworking">Ångra</button>
+                            <button id="profile-save-button" class="btn btn-small" ng-click="update()" ng-disabled="showworking">Spara</button>
+
+                            <div class="spinner" ng-show="showworking"></div>
+                            <span id="postfeedback">{{postfeedbacktext}}</span>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+{
+    "commands":[
+        {
+            "classes":"command",
+            "href":"createconversation",
+            "id":"createconversation",
+            "rel":"createconversation",
+            "text":"Createconversation"
+        }
+    ],
+    "index":{
+    "_type":"se.streamsource.streamflow.surface.api.OpenCaseDTO",
+    "caseId":"20121112-1",
+    "createdBy":"Henrik",
+    "creationDate":"2012-10-26T12:47:07.345Z",
+    "description":"En rubrik här skulle inte vara så dumt",
+    "project":"Streamflow",
+    "status":"OPEN"
+}, "queries":[
+    {
+        "classes":"query",
+        "href":"index",
+        "id":"index",
+        "rel":"index",
+        "text":"Index"
+    },
+    {
+        "classes":"query",
+        "href":"caselog",
+        "id":"caselog",
+        "rel":"caselog",
+        "text":"Caselog"
+    }
+], "resources":[
+    {
+        "classes":"resource",
+        "href":"submittedforms/",
+        "id":"submittedforms",
+        "rel":"submittedforms",
+        "text":"Submittedforms"
+    }
+]}

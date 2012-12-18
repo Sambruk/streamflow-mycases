@@ -1,0 +1,32 @@
+{"commands":[], "index":{
+    "_type":"se.streamsource.streamflow.surface.api.ClosedCaseDTO",
+    "caseId":"20121114-1",
+    "closeDate":"2012-11-14T12:31:09.205Z",
+    "creationDate":"2012-11-14T12:04:10.465Z",
+    "description":"Ett stängt ärende",
+    "project":"Streamflow",
+    "resolution":null
+}, "queries":[
+    {
+        "classes":"query",
+        "href":"index",
+        "id":"index",
+        "rel":"index",
+        "text":"Index"
+    },
+    {
+        "classes":"query",
+        "href":"caselog",
+        "id":"caselog",
+        "rel":"caselog",
+        "text":"Caselog"
+    }
+], "resources":[
+    {
+        "classes":"resource",
+        "href":"submittedforms/",
+        "id":"submittedforms",
+        "rel":"submittedforms",
+        "text":"Submittedforms"
+    }
+]}

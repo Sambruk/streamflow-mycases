@@ -1,0 +1,107 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+.infohidden { display: none;}
+
+body {
+    padding-top: 40px;
+}
+
+.navbar-inverse .brand {
+    color: white;
+    font-weight: bold;
+}
+.username {
+    padding-top: 10px;
+    padding-right: 5px;
+    float: left;
+}
+
+h3 small {
+    font-size: 20.5px;
+}
+
+.edit-icon {
+    padding-top: 15px;
+}
+
+.case-details {
+    padding-right: 20px;
+    float: left;
+}
+
+.page-header {
+    border: none;
+    margin: 20px 0 0px;
+}
+
+.participants {
+    margin-bottom: 10px;
+}
+
+.conversation {
+    border-top: 1px solid;
+    padding: 7px 7px 10px 7px;
+}
+
+.conversation-collapsed {
+    background-color: whiteSmoke;
+}
+
+.conversation-user {
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.conversation-date {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.conversation-message {
+    padding-top: 5px;
+    clear: both;
+}
+
+.column-header {
+    margin: 20px 0 15px;
+}
+
+.caselog {
+    border-top: 1px solid;
+    background-color: whiteSmoke;
+    padding: 7px 7px 10px 7px;
+}
+
+.caselog-user {
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.caselog-date {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.caselog-message {
+    padding-top: 5px;
+    clear: both;
+}
+
+div.spinner {width: 36px;
+    height:39px;
+    background-image: url('../img/spinner.gif');
+    display: inline-block;
+}
+
+#conversationbuttons button,
+#profile-reset-button,
+#profile-save-button,
+#profile-change-button {margin-bottom:30px;}
+
+#postfeedback,
+#feedback {overflow: hidden;
+    display:inline-block;
+    position: relative;
+    top: -10px;}

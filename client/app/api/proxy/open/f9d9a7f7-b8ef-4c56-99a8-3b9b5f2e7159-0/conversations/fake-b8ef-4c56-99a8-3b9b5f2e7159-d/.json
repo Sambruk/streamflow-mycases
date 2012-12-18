@@ -1,0 +1,16 @@
+{"commands":[], "index":null, "queries":[], "resources":[
+{
+"classes":"resource",
+"href":"messages/",
+"id":"messages",
+"rel":"messages",
+"text":"Messages"
+},
+{
+"classes":"resource",
+"href":"participants/",
+"id":"participants",
+"rel":"participants",
+"text":"Participants"
+}
+]}

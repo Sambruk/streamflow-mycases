@@ -1,0 +1,54 @@
+{"links":[
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.caselog.CaseLogEntryDTO",
+        "classes":null,
+        "href":"",
+        "id":"",
+        "rel":null,
+        "text":"Removed case type",
+        "caseLogType":"system",
+        "creationDate":"2012-10-26T14:07:46.797Z",
+        "creator":"MyName",
+        "message":"Removed case type",
+        "myPagesVisibility":true
+    },
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.caselog.CaseLogEntryDTO",
+        "classes":null,
+        "href":"",
+        "id":"",
+        "rel":null,
+        "text":"Set case type to formulärstest",
+        "caseLogType":"system",
+        "creationDate":"2012-10-26T14:12:26.711Z",
+        "creator":"MyName",
+        "message":"Set case type to formulärstest",
+        "myPagesVisibility":true
+    },
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.caselog.CaseLogEntryDTO",
+        "classes":null,
+        "href":"",
+        "id":"",
+        "rel":null,
+        "text":"Opened",
+        "caseLogType":"system",
+        "creationDate":"2012-11-12T14:20:47.547Z",
+        "creator":"MyName",
+        "message":"Opened",
+        "myPagesVisibility":true
+    },
+    {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.caselog.CaseLogEntryDTO",
+        "classes":null,
+        "href":"",
+        "id":"",
+        "rel":null,
+        "text":"Här har vi också ett eget meddelande",
+        "caseLogType":"custom",
+        "creationDate":"2012-11-13T10:31:44.024Z",
+        "creator":"MyName",
+        "message":"Här har vi också ett eget meddelande",
+        "myPagesVisibility":true
+    }
+]}

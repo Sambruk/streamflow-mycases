@@ -10,5 +10,6 @@ rm -rf dist
 yeoman build
 rm -rf dist/api
 rm -f dist/mock.html
-rm -rf dist/modules
+# TODO remove not needed script since they are replaced by scripts.js
+# rm -rf dist/modules/*.js
 

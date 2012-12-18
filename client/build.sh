@@ -6,4 +6,8 @@
 # or distribution is prohibited.
 #
 
-echo  Hello > hello.html
+rm -rf dist
+yeoman build
+rm -rf dist/api
+rm -f dist/mock.html
+rm -rf dist/test*

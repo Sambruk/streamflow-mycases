@@ -80,10 +80,7 @@
 							</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/../client</directory>
-									<includes>
-										<include>**/*.html</include>
-									</includes>
+									<directory>${basedir}/../client/dist</directory>
 								</resource>
 							</resources>
 						</configuration>

@@ -242,6 +242,7 @@
                         <exclude>**/webapp/css/external/**</exclude>
                         <exclude>**/*.html</exclude> <!--  IE will screw up if anything is added before the doctype, add license manually instead -->
                         <exclude>**/jquery-ui-1.8.2.css</exclude>
+                        <exclude>client/**</exclude> <!-- Do this for now till we know it's working -->
                     </excludes>
                     <mapping>
                         <tcl>SCRIPT_STYLE</tcl>

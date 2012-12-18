@@ -10,4 +10,5 @@ rm -rf dist
 yeoman build
 rm -rf dist/api
 rm -f dist/mock.html
-rm -rf dist/test*
+rm -rf dist/modules
+

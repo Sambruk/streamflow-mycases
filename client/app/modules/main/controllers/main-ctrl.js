@@ -7,6 +7,7 @@
     ['$scope', '$templateCache', '$http','customerService',
       function ($scope, $templateCache, $http, customerService) {
         $scope.profile = customerService.getProfile();
+        $scope.logoutUrl = customerService.logoutUrl();
 
         // initialize template cache
         $http.get('modules/case-detail/view/case-detail.html', {cache:$templateCache})

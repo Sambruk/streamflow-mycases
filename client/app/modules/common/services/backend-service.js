@@ -24,8 +24,8 @@
     // The Instance API
     SfResource.prototype = {
 
-      absUrl : function(href) {
-        return httpService.absUrl(this.basehref + href);
+      absApiUrl : function(href) {
+        return httpService.absApiUrl(this.basehref + href);
       },
 
       createById:function (resourceData, id, urls) {
@@ -90,6 +90,11 @@
 
     // The Static API
     var api = {
+
+      logoutUrl : function() {
+        return httpService.baseUrl + '/saml/logout'
+      },
+
       get: function(dsl) {
         var urls = [];
         var result = [];

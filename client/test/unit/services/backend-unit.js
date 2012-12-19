@@ -14,7 +14,7 @@ describe("sf.common.services.backend", function () {
 
 
   beforeEach(inject(function (httpService) {
-    httpService.baseUrl = "mock/";
+    httpService.apiUrl = "mock/";
   }));
 
 

@@ -3,10 +3,11 @@
   var sfServices = angular.module('sf.common.services.http', []);
 
   sfServices.factory("httpService", ['$q', '$cacheFactory', '$location', '$http', function ($q, $cacheFactory, $location, $http) {
-    var url = $location.absUrl();
+    var url = $location.absApiUrl();
     var li = url.lastIndexOf($location.path());
     var index = url.substring(0, li);
-    var baseUrl = index.substring(0, index.lastIndexOf("/")) + "/api/proxy/";
+    var baseUrl = index.substring(0, index.lastIndexOf("/"));
+    var apiUrl = baseUrl + "/api/proxy/";
 
     var cache = $cacheFactory('sfHttpCache');
 
@@ -18,9 +19,11 @@
 
     return {
 
+      baseUrl: baseUrl,
+
       // When using the real streamflow server in the test_folder:
-      //"baseUrl": 'http://localhost:8082/streamflow/surface/customers/197606030001/',
-      "baseUrl":baseUrl,
+      //"apiUrl": 'http://localhost:8082/streamflow/surface/customers/197606030001/',
+      apiUrl:apiUrl,
 
       timeout: 10000,
 
@@ -28,8 +31,8 @@
         return cache.info();
       },
 
-      absUrl: function(href) {
-        return this.baseUrl + href;
+      absApiUrl: function(href) {
+        return this.apiUrl + href;
       },
 
       isCached: function(href) {
@@ -42,7 +45,7 @@
 
       getRequest: function (href) {
         var headers = {'Authorization':makeBaseAuth('administrator', 'administrator')};
-        var url = this.absUrl(href);
+        var url = this.absApiUrl(href);
 
         var result = cache.get(href);
         if (! result) {
@@ -61,7 +64,7 @@
         var params = $.param(data);
         return $http({
           method: 'POST',
-          url: this.absUrl(href),
+          url: this.absApiUrl(href),
           timeout: this.timeout,
           data: params,
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}

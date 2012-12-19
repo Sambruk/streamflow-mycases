@@ -30,7 +30,7 @@ describe("sf.common.services.customer", function () {
   });
 
   beforeEach(inject(function(httpService, navigationService) {
-    httpService.baseUrl = 'mock/';
+    httpService.apiUrl = 'mock/';
     spyOn(navigationService, 'caseId').andReturn('f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0');
   }));
 

@@ -28,6 +28,10 @@
         });
       },
 
+      logoutUrl: function() {
+        return backendService.logoutUrl();
+      },
+
       updateProfile: function(profile) {
         return backendService.postNested([{resources: 'profile'}, {commands: 'update'}], profile);
       },
@@ -81,7 +85,7 @@
               var links = resource.response.index.links;
               if (links && links.length > 0) {
                 result.submittedFormText = links[0].text;
-                result.submittedFormUrl  = resource.absUrl(links[0].href);
+                result.submittedFormUrl  = resource.absApiUrl(links[0].href);
               }
             });
           }

@@ -7,7 +7,7 @@ describe("sf.common.services.http", function () {
 
   describe('httpService', function () {
     beforeEach(inject(function ($location) {
-      spyOn($location, 'absApiUrl').andReturn("http://localhost:8000/app/index.html#/customers/197606030001");
+      spyOn($location, 'absUrl').andReturn("http://localhost:8000/app/index.html#/customers/197606030001");
       spyOn($location, 'path').andReturn("/customers/197606030001");
     }));
 

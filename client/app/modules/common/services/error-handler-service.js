@@ -5,8 +5,8 @@
 
   sfServices.factory('errorHandler', ['$window', '$q', function ($window, $q) {
     return function(error) {
-      if (error.status && error.status == 403) {
-        console.log("RELOAD WINDOW");
+      console.log("ERROR HANDLER ", error);
+      if (error.status == 403) {
         $window.location.reload();
       }
       return $q.reject(error);

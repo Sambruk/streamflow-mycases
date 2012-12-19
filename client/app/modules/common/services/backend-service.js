@@ -137,9 +137,9 @@
         return httpService.getRequest("").then(function (response) {
           var resource = new SfResource("", response);
           return resource.postNested(specs, data);
-        }).then(function(response) {
+        }, errorHandler).then(function(response) {
             return responseSelector ?  findInJson(responseSelector, response.data) : response;
-        });
+        }, errorHandler);
       }
     }
 

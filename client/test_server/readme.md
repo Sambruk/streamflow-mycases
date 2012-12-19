@@ -35,14 +35,4 @@ http://demo.sf.streamsource.se/mycases/index.html
 ### Install the WebStart Client
 
 This is optional
-I think the webstart client can be downloaded from the web application ?
-
-
-### Config the server
-
-In case you get an exception when you start:
-wget http://waybuild.gotdns.com/nexus/content/repositories/snapshots/se/streamsource/streamflow/streamflow-web/1.8.0-SNAPSHOT/streamflow-web-1.8.0-20121120.101803-1.war
-
-* Open VisualVM
-* Open MBeans floder in the jetty-runner process
-*   
+I think the webstart client can be downloaded from the web application at http://demo.sf.streamsource.se ?

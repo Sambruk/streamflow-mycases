@@ -16,8 +16,10 @@ Windows:
 ### Run
 
 Run the run.sh file. It will start the jetty webserver with the stream source web application.
-Open browser at http://localhost:8090/streamflow
+Open browser at http://localhost:8082/streamflow
 
+To test the mycases front end, run the mycases.sh script which starts another jetty webserver on port 8090.
+The ajax requests goes to the mycases front end server.
 
 ### Test
 

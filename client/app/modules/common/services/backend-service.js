@@ -23,6 +23,11 @@
 
     // The Instance API
     SfResource.prototype = {
+
+      absUrl : function(href) {
+        return httpService.absUrl(this.basehref + href);
+      },
+
       createById:function (resourceData, id, urls) {
         var w = _.find(resourceData, function (item) {
           return item.id === id

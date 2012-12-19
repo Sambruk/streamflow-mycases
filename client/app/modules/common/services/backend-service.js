@@ -104,7 +104,7 @@
               var resource = new SfResource("", response);
               return resource.getNested(angular.copy(dsl.specs), urls);}, errorHandler).
             then(function(resource){
-              dsl.onSuccess(resource, result)
+              dsl.onSuccess(resource, result, urls)
             }, errorHandler);
         };
         result.resolve();

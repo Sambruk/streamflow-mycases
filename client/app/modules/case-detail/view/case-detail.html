@@ -28,13 +28,10 @@
                             <dt>Skapat av</dt>
                             <dd>{{caseDetail.createdBy}}</dd>
                         </dl>
-                        <dl class="case-details">
+
+                        <dl class="case-details" ng-show="caseDetail.submittedFormUrl">
                             <dt>Inskickade formulär</dt>
-                            <dd>Allmän fråga</dd>
-                        </dl>
-                        <dl class="case-details">
-                            <dt>Bifogade filer</dt>
-                            <dd>-</dd>
+                            <dd><a ng-href="{{caseDetail.submittedFormUrl}}"><img ng-src="img/pdficon_small.gif"/> {{caseDetail.submittedFormText}}</a></dd>
                         </dl>
                     </div>
 

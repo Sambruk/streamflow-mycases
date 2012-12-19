@@ -53,7 +53,7 @@
 
     it("should contain header info for the case", function(){
       expect(element('.case-details:first dd').html()).toBe("Streamflow");
-      expect(element('.case-details').count()).toBe(6);
+      expect(element('.case-details').count()).toBe(5);
     });
 
     it("should display tabs for available conversations ", function() {

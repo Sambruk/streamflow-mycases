@@ -116,7 +116,7 @@ describe("sf.common.services.customer", function () {
           $httpBackend.expectGET('mock/open/').respond(backend.open);
           $httpBackend.expectGET('mock/open/cases').respond(backend.cases);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/').respond(backend.caseDetail1);
-           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/').respond(backend.conversation1);
+          $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/').respond(backend.conversation1);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/').respond(backend.conversationDetail1);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/messages/').respond(backend.conversation1Messages);
           $httpBackend.expectPOST('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/messages/createmessage', "string=hopp").respond("Japp");
@@ -157,6 +157,8 @@ describe("sf.common.services.customer", function () {
         $httpBackend.expectGET('mock/open/').respond(backend.open);
         $httpBackend.expectGET('mock/open/cases').respond(backend.cases);
         $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/').respond(backend.caseDetail1);
+        $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/submittedforms/').respond(backend.submittedforms);
+
         spyOn(navigationService, 'caseType').andReturn('open');
 
         // When
@@ -170,6 +172,10 @@ describe("sf.common.services.customer", function () {
 
         // Then
         expect(response.createdBy).toEqual('Henrik');
+        expect(response.submittedFormText).toEqual('Dubbel signatur I');
+        // http://localhost:8090/api/proxy/open/31b754f0-a18d-4f46-a5c2-d47c9b8f9829-0/submittedforms/3b4ce334-e6c7-43e0-babe-2cf45f907bee-0/generateformaspdf
+        // http://localhost:8090/open/761ae88c-b312-44ad-91d3-0481d9e28035-1e/submittedforms/3b4ce334-e6c7-43e0-babe-2cf45f907bee-0/generateformaspdf
+        expect(response.submittedFormUrl).toEqual("open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/submittedforms/3b4ce334-e6c7-43e0-babe-2cf45f907bee-0/generateformaspdf");
       }));
     });
 

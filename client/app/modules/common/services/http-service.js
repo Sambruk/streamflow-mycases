@@ -19,7 +19,7 @@
     return {
 
       // When using the real streamflow server in the test_folder:
-      //"baseUrl": 'http://localhost:8090/streamflow/surface/customers/197606030001/',
+      //"baseUrl": 'http://localhost:8082/streamflow/surface/customers/197606030001/',
       "baseUrl":baseUrl,
 
       timeout: 10000,

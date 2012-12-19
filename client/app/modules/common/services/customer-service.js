@@ -69,7 +69,7 @@
             {resources: navigationService.caseType()},
             {queries: 'cases'},
             {links: navigationService.caseId()}],
-          onSuccess: function(resource, result){
+          onSuccess: function(resource, result, urls){
             _.each(['caseId', 'createdBy', 'creationDate', 'description', 'project', 'status'], function(item){
               result[item] = resource.response.index[item];
             });
@@ -77,6 +77,13 @@
             if (resource.response.index.closeDate) {
               result.status = 'CLOSED';
             }
+            resource.getNested([{resources: 'submittedforms'}], urls).then(function(resource) {
+              var links = resource.response.index.links;
+              if (links && links.length > 0) {
+                result.submittedFormText = links[0].text;
+                result.submittedFormUrl  = resource.basehref + links[0].href;
+              }
+            });
           }
         });
       },

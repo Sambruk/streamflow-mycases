@@ -3,7 +3,7 @@
   var sfServices = angular.module('sf.common.services.http', []);
 
   sfServices.factory("httpService", ['$q', '$cacheFactory', '$location', '$http', function ($q, $cacheFactory, $location, $http) {
-    var url = $location.absApiUrl();
+    var url = $location.absUrl();
     var li = url.lastIndexOf($location.path());
     var index = url.substring(0, li);
     var baseUrl = index.substring(0, index.lastIndexOf("/"));

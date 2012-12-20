@@ -3,7 +3,7 @@
 
   var sfServices = angular.module('sf.common.services.error-handler', []);
 
-  sfServices.factory('errorHandler', ['$window', '$q', function ($window, $q) {
+  sfServices.factory('errorHandlerService', ['$window', '$q', function ($window, $q) {
     return function(error) {
       console.log("ERROR HANDLER ", error);
       if (error.status == 403) {

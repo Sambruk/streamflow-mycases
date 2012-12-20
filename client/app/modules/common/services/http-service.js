@@ -1,8 +1,8 @@
 (function() {
 
-  var sfServices = angular.module('sf.common.services.http', []);
+  var sfServices = angular.module('sf.common.services.http', ['sf.common.services.error-handler']);
 
-  sfServices.factory("httpService", ['$q', '$cacheFactory', '$location', '$http', function ($q, $cacheFactory, $location, $http) {
+  sfServices.factory("httpService", ['$q', '$cacheFactory', '$location', '$http', 'errorHandlerService', function ($q, $cacheFactory, $location, $http, errorHandlerService) {
     var url = $location.absUrl();
     var li = url.lastIndexOf($location.path());
     var index = url.substring(0, li);
@@ -52,7 +52,7 @@
           return $http({method:'GET', url:url, cache:false, headers:headers, timeout: this.timeout}).then(function(response) {
             cache.put(href, response);
             return response;
-          });
+          }, errorHandlerService);
         } else {
           var deferred = $q.defer();
           deferred.resolve(result);

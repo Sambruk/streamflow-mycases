@@ -36,7 +36,7 @@ describe("sf.common.services.http", function () {
 
       httpService.getRequest("bla/a/").then(function() {
         expect(httpService.isCached('bla/a/')).toBe(true);
-      })
+      });
       $httpBackend.flush();
     }));
 

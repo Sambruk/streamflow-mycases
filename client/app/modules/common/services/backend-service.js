@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var sfServices = angular.module('sf.common.services.backend', ['sf.common.services.http', 'sf.common.services.error-handler']);
+  var sfServices = angular.module('sf.common.services.backend', ['sf.common.services.http']);
 
-  sfServices.factory("backendService", ['$http', '$q', 'httpService', 'errorHandler', '$timeout', function ($http, $q, httpService, errorHandler, $timeout) {
+  sfServices.factory("backendService", ['$http', '$q', 'httpService', function ($http, $q, httpService) {
     function SfResource(href, response) {
       if (response) {
         this.response = response.data;
@@ -92,7 +92,7 @@
     var api = {
 
       logoutUrl : function() {
-        return httpService.baseUrl + '/saml/logout'
+        return httpService.baseUrl + '/saml/logout';
       },
 
       get: function(dsl) {
@@ -112,10 +112,10 @@
           return httpService.getRequest("").
             then(function (response) {
               var resource = new SfResource("", response);
-              return resource.getNested(angular.copy(dsl.specs), urls);}, errorHandler).
+              return resource.getNested(angular.copy(dsl.specs), urls);}).
             then(function(resource){
               dsl.onSuccess(resource, result, urls)
-            }, errorHandler);
+            });
         };
         result.resolve();
         return result;
@@ -137,9 +137,9 @@
         return httpService.getRequest("").then(function (response) {
           var resource = new SfResource("", response);
           return resource.postNested(specs, data);
-        }, errorHandler).then(function(response) {
+        }).then(function(response) {
             return responseSelector ?  findInJson(responseSelector, response.data) : response;
-        }, errorHandler);
+        });
       }
     }
 

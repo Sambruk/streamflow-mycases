@@ -90,11 +90,6 @@
 
     // The Static API
     var api = {
-
-      logoutUrl : function() {
-        return httpService.baseUrl + '/saml/logout';
-      },
-
       get: function(dsl) {
         var urls = [];
         var result = [];

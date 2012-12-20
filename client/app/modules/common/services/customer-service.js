@@ -28,10 +28,6 @@
         });
       },
 
-      logoutUrl: function() {
-        return backendService.logoutUrl();
-      },
-
       updateProfile: function(profile) {
         return backendService.postNested([{resources: 'profile'}, {commands: 'update'}], profile);
       },

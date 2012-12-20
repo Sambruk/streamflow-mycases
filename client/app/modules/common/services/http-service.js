@@ -43,12 +43,12 @@
         hrefs.forEach(function(href) { cache.remove(href)});
       },
 
-      getRequest: function (href) {
+      getRequest: function (href, skipCache) {
         var headers = {'Authorization':makeBaseAuth('administrator', 'administrator')};
         var url = this.absApiUrl(href);
 
         var result = cache.get(href);
-        if (! result) {
+        if (!result || skipCache) {
           return $http({method:'GET', url:url, cache:false, headers:headers, timeout: this.timeout}).then(function(response) {
             cache.put(href, response);
             return response;

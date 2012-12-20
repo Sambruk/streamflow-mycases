@@ -2,9 +2,10 @@
 
   var sfServices = angular.module('sf.common.services.session', ['sf.common.services.http']);
 
+  var idleInterval; // just to make sure its only called once
+
   sfServices.factory("sessionService", ['$location', '$http', 'httpService', '$window', function ($location, $http, httpService, $window) {
     var idle = 0;
-    var idleInterval;
 
     function stopMonitorUserActivity() {
       clearInterval(idleInterval);
@@ -13,7 +14,6 @@
     }
 
     function startMonitorUserActivity() {
-      console.log("startMonitorUserActivity");
 
       if (idleInterval) {
         console.log("Already started startMonitorUserActivity");
@@ -24,7 +24,6 @@
         idle += 1;
         // as long as the user is active poll the server in order to keep the connection alive
         if (idle < 10) {
-          console.log("IDLE " + idle);
           httpService.getRequest('', true); // force the session alive with a get request
         }
 

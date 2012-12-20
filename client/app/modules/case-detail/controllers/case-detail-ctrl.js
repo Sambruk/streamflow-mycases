@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('sf.case-detail.controllers', ['sf.common.services.customer', 'sf.common.services.backend']);
+  var app = angular.module('sf.case-detail.controllers', ['sf.common.services.navigation', 'sf.common.services.customer', 'sf.common.services.backend']);
 
   app.controller('caseDetailsHeader',
     ['$scope', 'customerService',
@@ -18,18 +18,17 @@
     ]);
 
   app.controller('caseDetailsConversation',
-    ['$scope', '$timeout', 'customerService','$q',
-      function ($scope, $timeout, customerService, $q) {
+    ['$scope', '$timeout', 'customerService','$q', 'navigationService',
+      function ($scope, $timeout, customerService, $q, navigationService) {
 
         $scope.showworking = false;
         $scope.feedbacktext = "";
         $scope.newreply = "";
 
         $scope.conversations = customerService.getConversations();
-
         $scope.participants = customerService.getConversationParticipants();
-
         $scope.messages = customerService.getConversationMessages();
+        $scope.canCreateNewMessages = navigationService.caseType() === 'open';
 
         var startSpinner = function() {
           $scope.showworking = true;
@@ -51,6 +50,7 @@
             startSpinner();
 
             var data = {message: newreply};
+
             customerService.createNewMessage(data).then(function () {
               $scope.conversations.invalidate();
               $scope.messages.invalidate();
@@ -64,7 +64,6 @@
               return deferred.promise;
             }).then(function() {
                 $scope.messages.resolve().then(function() {
-                  console.log("RESOLVED, stop spinner");
                   stopSpinner();
                   $scope.newreply = "";
                 });

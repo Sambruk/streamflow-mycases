@@ -22,7 +22,7 @@ describe("sf.common.services.backend", function () {
 
     describe('backendService', function () {
 
-      xit("calls the error handler when a resource is unavailable", inject(function (backendService, $httpBackend) {
+      it("calls the error handler when a resource is unavailable", inject(function (backendService, $httpBackend) {
         $httpBackend.expectGET('mock/').respond(backend.customer);
         $httpBackend.expectGET('mock/open/').respond(backend.open);
         $httpBackend.expectGET('mock/open/cases').respond(404, 'oops');
@@ -30,7 +30,7 @@ describe("sf.common.services.backend", function () {
         var self = this;
         backendService.get({
           specs: [{resources:'open'},{queries:'cases'}],
-          onSuccess: function () { self.fail("should not have been called"); } // fail
+          onSuccess: function () { }
           });
         $httpBackend.flush();
         expect(error.status).toBe(404);

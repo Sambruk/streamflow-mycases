@@ -52,7 +52,7 @@
           return $http({method:'GET', url:url, cache:false, headers:headers, timeout: this.timeout}).then(function(response) {
             cache.put(href, response);
             return response;
-          }, errorHandlerService);
+          }, errorHandlerService)
         } else {
           var deferred = $q.defer();
           deferred.resolve(result);

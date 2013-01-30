@@ -16,24 +16,28 @@
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-
+<!-- 
+	<context:property-placeholder location="file:${ext.properties.dir}mycases.properties" />
+	 -->
+	 
+	<context:property-placeholder location="classpath:config/mycases-default.properties" />
 	<context:annotation-config />
 	<context:component-scan base-package="org.springframework.security.saml" />
 	<context:component-scan base-package="com.jayway.surface.mycases.rest" />
 
-	<http security="none" pattern="/favicon.ico" />
-	<http security="none" pattern="/css/**" />
-	<http security="none" pattern="/js/**" />
-	<http security="none" pattern="/img/**" />
-	<http security="none" pattern="/templates/**" />
-	<http security="none" pattern="/logout.jsp" />
-	<http security="none" pattern="/index.html" />
+	<http security="none" pattern="/mycases/favicon.ico" />
+	<http security="none" pattern="/mycases/css/**" />
+	<http security="none" pattern="/mycases/js/**" />
+	<http security="none" pattern="/mycases/img/**" />
+	<http security="none" pattern="/mycases/templates/**" />
+	<http security="none" pattern="/mycases/logout.jsp" />
+	<http security="none" pattern="/mycases/index.html" />
 
 	<http entry-point-ref="samlEntryPoint" use-expressions="true">
 		<intercept-url pattern="/**" access="isAuthenticated()" />
 		<custom-filter ref="ajaxCompatibleExceptionTranslationFilter"
 			after="EXCEPTION_TRANSLATION_FILTER" />
-		<logout logout-success-url="/logged_out.jsp" />
+		<logout logout-success-url="/mycases/logged_out.jsp" />
 		<custom-filter ref="samlFilter" position="CAS_FILTER" />
 		<custom-filter before="FIRST" ref="metadataGeneratorFilter" />
 	</http>
@@ -79,7 +83,7 @@
 
 	<beans:bean id="apiPathMatcher"
 		class="org.springframework.security.web.util.AntPathRequestMatcher">
-		<beans:constructor-arg value="/api/**" />
+		<beans:constructor-arg value="/mycases/api/**" />
 	</beans:bean>
 
 	<beans:bean id="http403ForbiddenEntryPoint"
@@ -149,7 +153,7 @@
 						<beans:bean
 							class="org.opensaml.saml2.metadata.provider.FilesystemMetadataProvider">
 							<beans:constructor-arg>
-								<beans:value type="java.io.File">classpath:security/idp-logica.xml
+								<beans:value type="java.io.File">classpath:${idp.metadatafile}
 								</beans:value>
 							</beans:constructor-arg>
 							<beans:property name="parserPool" ref="parserPool" />

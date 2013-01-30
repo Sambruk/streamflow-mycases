@@ -2,9 +2,12 @@
 
 .infohidden { display: none;}
 
-body {
+@media (min-width: 980px) {
+  body {
     padding-top: 40px;
+  }
 }
+
 
 .navbar-inverse .brand {
     color: white;

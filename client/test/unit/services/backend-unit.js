@@ -9,12 +9,12 @@ describe("sf.common.services.backend", function () {
   var error;
   beforeEach(module(function($provide) {
     error = undefined;
-    $provide.value('errorHandler', function(e) { error = e;});
+    $provide.value('errorHandlerService', function(e) { error = e;});
   }));
 
 
   beforeEach(inject(function (httpService) {
-    httpService.baseUrl = "mock/";
+    httpService.apiUrl = "mock/";
   }));
 
 
@@ -30,7 +30,7 @@ describe("sf.common.services.backend", function () {
         var self = this;
         backendService.get({
           specs: [{resources:'open'},{queries:'cases'}],
-          onSuccess: function () { self.fail("should not have been called"); } // fail
+          onSuccess: function () { }
           });
         $httpBackend.flush();
         expect(error.status).toBe(404);

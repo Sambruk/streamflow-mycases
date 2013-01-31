@@ -12,12 +12,12 @@ describe("sf.common.services.http", function () {
     }));
 
     it("can get the entry point", inject(function (httpService) {
-        expect(httpService.baseUrl).toEqual("http://localhost:8000/app/api/proxy/");
+        expect(httpService.apiUrl).toEqual("http://localhost:8000/app/api/proxy/");
       }
     ));
 
     it("can get data from server", inject(function(httpService, $httpBackend){
-      httpService.baseUrl = "mock/";
+      httpService.apiUrl = "mock/";
 
       $httpBackend.expectGET('mock/customer1/').respond(backend.customer);
 
@@ -30,18 +30,18 @@ describe("sf.common.services.http", function () {
 
 
     it("does cache requests", inject(function(httpService, $httpBackend) {
-      httpService.baseUrl = "";
+      httpService.apiUrl = "";
       expect(httpService.isCached('bla/a/')).toBe(false);
       $httpBackend.expectGET("bla/a/").respond(backend.customer);
 
       httpService.getRequest("bla/a/").then(function() {
         expect(httpService.isCached('bla/a/')).toBe(true);
-      })
+      });
       $httpBackend.flush();
     }));
 
     it("can empty the cache", inject(function(httpService, $httpBackend) {
-      httpService.baseUrl = "";
+      httpService.apiUrl = "";
       $httpBackend.expectGET("bla/a/").respond(backend.customer);
 
       httpService.getRequest("bla/a/");

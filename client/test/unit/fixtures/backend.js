@@ -167,6 +167,31 @@ window.mockBackend = window.mockBackend || (function () {
     }
   ]};
 
+  mockBackend.submittedforms = {"commands":[], "index":{
+    "_type":"se.streamsource.dci.value.link.LinksValue",
+    "links":[
+      {
+        "_type":"se.streamsource.streamflow.api.workspace.cases.form.SubmittedFormListDTO",
+        "classes":null,
+        "href":"3b4ce334-e6c7-43e0-babe-2cf45f907bee-0/generateformaspdf",
+        "id":"3b4ce334-e6c7-43e0-babe-2cf45f907bee-0",
+        "rel":null,
+        "text":"Dubbel signatur I",
+        "form":"Dubbel signatur I",
+        "submissionDate":"2012-12-04T15:11:43.380Z",
+        "submitter":"WebForms"
+      }
+    ]
+  }, "queries":[
+    {
+      "classes":"query",
+      "href":"index",
+      "id":"index",
+      "rel":"index",
+      "text":"Index"
+    }
+  ], "resources":[]};
+
   mockBackend.caseDetailNoConversations = {
     "commands":[
       {

@@ -28,20 +28,17 @@
                             <dt>Skapat av</dt>
                             <dd>{{caseDetail.createdBy}}</dd>
                         </dl>
-                        <dl class="case-details">
+
+                        <dl class="case-details" ng-show="caseDetail.submittedFormUrl">
                             <dt>Inskickade formulär</dt>
-                            <dd>Allmän fråga</dd>
-                        </dl>
-                        <dl class="case-details">
-                            <dt>Bifogade filer</dt>
-                            <dd>-</dd>
+                            <dd><a ng-href="{{caseDetail.submittedFormUrl}}"><img ng-src="img/pdficon_small.gif"/> {{caseDetail.submittedFormText}}</a></dd>
                         </dl>
                     </div>
 
                 </div>
                 <div class="row" ng-controller="caseDetailsConversation">
                     <div class="span9">
-                        <h4>Konversation:</h4>
+                        <h4>Konversation</h4>
 
                         <ul class="nav nav-tabs" id="conversation-tab">
                             <li ng-class='tab.class' ng-repeat="tab in conversations">
@@ -49,8 +46,8 @@
                             </li>
                         </ul>
 
-                        <div class="participants">
-                            <strong>Deltagare:</strong>
+                        <div class="participants"  ng-show='conversations.length > 0'>
+                            <strong>Deltagare</strong>
                             <span ng-repeat="p in participants"> {{ p.name }}, </span>
                         </div>
 
@@ -60,7 +57,7 @@
                             <div class="conversation-message">{{ msg.text }}</div>
                         </div>
 
-                        <form>
+                        <form ng-show='canCreateNewMessages'>
                             <fieldset>
                                 <div class="clearfix">
                                     <label for="replyarea">Nytt meddelande</label>

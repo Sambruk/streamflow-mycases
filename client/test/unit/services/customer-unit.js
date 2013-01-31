@@ -30,7 +30,7 @@ describe("sf.common.services.customer", function () {
   });
 
   beforeEach(inject(function(httpService, navigationService) {
-    httpService.baseUrl = 'mock/';
+    httpService.apiUrl = 'mock/';
     spyOn(navigationService, 'caseId').andReturn('f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0');
   }));
 
@@ -116,7 +116,7 @@ describe("sf.common.services.customer", function () {
           $httpBackend.expectGET('mock/open/').respond(backend.open);
           $httpBackend.expectGET('mock/open/cases').respond(backend.cases);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/').respond(backend.caseDetail1);
-           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/').respond(backend.conversation1);
+          $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/').respond(backend.conversation1);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/').respond(backend.conversationDetail1);
           $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/messages/').respond(backend.conversation1Messages);
           $httpBackend.expectPOST('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/conversations/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-d/messages/createmessage', "string=hopp").respond("Japp");
@@ -157,6 +157,8 @@ describe("sf.common.services.customer", function () {
         $httpBackend.expectGET('mock/open/').respond(backend.open);
         $httpBackend.expectGET('mock/open/cases').respond(backend.cases);
         $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/').respond(backend.caseDetail1);
+        $httpBackend.expectGET('mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/submittedforms/').respond(backend.submittedforms);
+
         spyOn(navigationService, 'caseType').andReturn('open');
 
         // When
@@ -170,6 +172,8 @@ describe("sf.common.services.customer", function () {
 
         // Then
         expect(response.createdBy).toEqual('Henrik');
+        expect(response.submittedFormText).toEqual('Dubbel signatur I');
+        expect(response.submittedFormUrl).toEqual("mock/open/f9d9a7f7-b8ef-4c56-99a8-3b9b5f2e7159-0/submittedforms/3b4ce334-e6c7-43e0-babe-2cf45f907bee-0/generateformaspdf");
       }));
     });
 

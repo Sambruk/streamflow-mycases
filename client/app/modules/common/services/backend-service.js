@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  var sfServices = angular.module('sf.common.services.backend', ['sf.common.services.http', 'sf.common.services.error-handler']);
+  var sfServices = angular.module('sf.common.services.backend', ['sf.common.services.http']);
 
-  sfServices.factory("backendService", ['$http', '$q', 'httpService', 'errorHandler', '$timeout', function ($http, $q, httpService, errorHandler, $timeout) {
+  sfServices.factory("backendService", ['$http', '$q', 'httpService', function ($http, $q, httpService) {
     function SfResource(href, response) {
       if (response) {
         this.response = response.data;
@@ -23,6 +23,11 @@
 
     // The Instance API
     SfResource.prototype = {
+
+      absApiUrl : function(href) {
+        return httpService.absApiUrl(this.basehref + href);
+      },
+
       createById:function (resourceData, id, urls) {
         var w = _.find(resourceData, function (item) {
           return item.id === id
@@ -102,10 +107,10 @@
           return httpService.getRequest("").
             then(function (response) {
               var resource = new SfResource("", response);
-              return resource.getNested(angular.copy(dsl.specs), urls);}, errorHandler).
+              return resource.getNested(angular.copy(dsl.specs), urls);}).
             then(function(resource){
-              dsl.onSuccess(resource, result)
-            }, errorHandler);
+              dsl.onSuccess(resource, result, urls)
+            });
         };
         result.resolve();
         return result;

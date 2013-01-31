@@ -30,7 +30,7 @@
 	<http security="none" pattern="/mycases/js/**" />
 	<http security="none" pattern="/mycases/img/**" />
 	<http security="none" pattern="/mycases/templates/**" />
-	<http security="none" pattern="/mycases/logout.jsp" />
+	<http security="none" pattern="/mycases/logout.html" />
 	<http security="none" pattern="/mycases/index.html" />
 
 	<http entry-point-ref="samlEntryPoint" use-expressions="true">
@@ -105,7 +105,7 @@
 	<!-- Handler deciding where to redirect user after successful login -->
 	<beans:bean id="successRedirectHandler"
 		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-		<beans:property name="defaultTargetUrl" value="/" />
+		<beans:property name="defaultTargetUrl" value="/#/" />
 	</beans:bean>
 
 	<!-- Provider of default SAML Context -->
@@ -153,7 +153,7 @@
 						<beans:bean
 							class="org.opensaml.saml2.metadata.provider.FilesystemMetadataProvider">
 							<beans:constructor-arg>
-								<beans:value type="java.io.File">classpath:${idp.metadatafile}
+								<beans:value type="java.io.File">file:${idp.metadatafile}
 								</beans:value>
 							</beans:constructor-arg>
 							<beans:property name="parserPool" ref="parserPool" />
@@ -164,13 +164,6 @@
 							class="org.springframework.security.saml.metadata.ExtendedMetadata" />
 					</beans:constructor-arg>
 				</beans:bean>
-				<!-- <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider"> -->
-				<!-- URL containing the metadata -->
-				<!-- <constructor-arg> <value type="java.lang.String">https://m10-mg-local.funktionstjanster.se/samlv2/idp/metadata/0</value> 
-					</constructor-arg> -->
-				<!-- Timeout for metadata loading in ms -->
-				<!-- <constructor-arg> <value type="int">5000</value> </constructor-arg> 
-					<property name="parserPool" ref="parserPool"/> </bean> -->
 			</beans:list>
 		</beans:constructor-arg>
 		<!-- OPTIONAL used when one of the metadata files contains information 
@@ -178,8 +171,10 @@
 		<!-- <property name="hostedSPName" value=""/> -->
 		<!-- OPTIONAL property: can tell the system which IDP should be used for 
 			authenticating user by default. -->
+			<!-- 
 		<beans:property name="defaultIDP"
 			value="https://m10-mg-local.funktionstjanster.se/samlv2/idp/metadata/0" />
+			 -->
 		<beans:property name="refreshCheckInterval" value="0" />
 	</beans:bean>
 
@@ -208,7 +203,7 @@
 	<!-- Handler for successful logout -->
 	<beans:bean id="successLogoutHandler"
 		class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
-		<beans:property name="defaultTargetUrl" value="/logout.jsp" />
+		<beans:property name="defaultTargetUrl" value="/logout.html" />
 	</beans:bean>
 
 	<!-- Override default logout processing filter with the one processing SAML 

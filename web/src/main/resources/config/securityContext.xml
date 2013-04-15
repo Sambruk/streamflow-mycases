@@ -32,6 +32,7 @@
 	<http security="none" pattern="/mycases/templates/**" />
 	<http security="none" pattern="/mycases/logout.html" />
 	<http security="none" pattern="/mycases/index.html" />
+    <http security="none" pattern="/mycases/saml/metadata/**"/>
 
 	<http entry-point-ref="samlEntryPoint" use-expressions="true">
 		<intercept-url pattern="/**" access="isAuthenticated()" />
@@ -47,6 +48,7 @@
 		<filter-chain-map path-type="ant">
 			<filter-chain pattern="/saml/login/**" filters="samlEntryPoint" />
 			<filter-chain pattern="/saml/logout/**" filters="samlLogoutFilter" />
+            <filter-chain pattern="/saml/metadata/**" filters="metadataDisplayFilter"/>
 			<filter-chain pattern="/saml/SSO/**" filters="samlWebSSOProcessingFilter" />
 			<filter-chain pattern="/saml/SSOHoK/**" filters="samlWebSSOHoKProcessingFilter" />
 			<filter-chain pattern="/saml/SingleLogout/**" filters="samlLogoutProcessingFilter" />
@@ -139,6 +141,10 @@
 		<beans:constructor-arg type="java.lang.String"
 			value="streamflow" />
 	</beans:bean>
+
+    <!-- The filter is waiting for connections on URL suffixed with filterSuffix and presents SP metadata there -->
+    <beans:bean id="metadataDisplayFilter" class="org.springframework.security.saml.metadata.MetadataDisplayFilter"/>
+
 
 	<!-- IDP Metadata configuration - paths to metadata of IDPs in circle of 
 		trust is here -->

@@ -34,12 +34,6 @@ public class StreamflowProxyController implements InitializingBean
 
    private static final Logger logger = Logger.getLogger( StreamflowProxyController.class );
 
-//   private static final String username = "6c476a2a-ed05-40bf-a89e-f1fb515a9014-0";
-//   private static final String password = "surfaceproxy";
-//   private static final String username = "5ef4522f-5717-401f-8ba9-1e046efd3b6c-1";
-//   private static final String password = "proxy";
-//   private static final String streamflowUrl = "http://localhost:8080/streamflow/surface/customers/";
-
    @Value("${streamflow.server.proxyuser}")
    String username;
 

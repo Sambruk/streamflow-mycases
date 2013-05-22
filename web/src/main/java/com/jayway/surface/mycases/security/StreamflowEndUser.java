@@ -7,6 +7,7 @@
  */
 package com.jayway.surface.mycases.security;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -37,9 +38,10 @@ public class StreamflowEndUser implements UserDetails
       return pnr;
    }
 
+   @SuppressWarnings("rawtypes")
    public Collection<? extends GrantedAuthority> getAuthorities()
    {
-      return null;
+      return new ArrayList();
    }
 
    public String getPassword()

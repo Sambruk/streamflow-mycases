@@ -15,10 +15,6 @@
                         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
                         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-<!-- 
-	<context:property-placeholder location="file:${ext.properties.dir}mycases.properties" />
-	 -->
 	 
 	<context:property-placeholder location="classpath:config/mycases-default.properties" />
 	<context:annotation-config />
@@ -96,8 +92,10 @@
 	<beans:bean id="metadataGeneratorFilter"
 		class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
 		<beans:constructor-arg>
-			<beans:bean
-				class="org.springframework.security.saml.metadata.StreamflowMetadataGenerator" />
+			<beans:bean class="org.springframework.security.saml.metadata.MetadataGenerator">
+				<beans:property name="includeDiscovery" value="false"/>
+				<beans:property name="entityBaseURL" value="${streamflow.saml.entityBaseUrl}"/>
+			</beans:bean>
 		</beans:constructor-arg>
 	</beans:bean>
 
@@ -110,9 +108,13 @@
 		<beans:property name="defaultTargetUrl" value="/#/" />
 	</beans:bean>
 
-	<!-- Provider of default SAML Context -->
-	<beans:bean id="contextProvider"
-		class="org.springframework.security.saml.context.SAMLContextProviderImpl" />
+	<beans:bean id="contextProvider" class="org.springframework.security.saml.context.SAMLContextProviderLB">
+		<beans:property name="scheme" value="${streamflow.saml.scheme}" />
+		<beans:property name="serverName" value="${streamflow.saml.serverName}" />
+		<beans:property name="serverPort" value="${streamflow.saml.serverPort}" />
+		<beans:property name="includeServerPortInRequestURL" value="${streamflow.saml.includeServerPortInRequestURL}" />
+		<beans:property name="contextPath" value="${streamflow.saml.contextPath}" />
+	</beans:bean>
 
 	<!-- SAML Authentication Provider responsible for validating of received 
 		SAML messages -->

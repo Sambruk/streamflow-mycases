@@ -1,0 +1,22 @@
+{
+  "name": "streamflow-mycases",
+  "version": "1.0.0",
+  "main": "app/modules/app.js",
+  "directory" : "app/components",
+  "ignore": [    
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "git://github.com/angular/bower-angular-resource.git#~1.0.3",
+    "bootstrap": "git://github.com/bowerjs/bootstrap.git#~2.1.1",
+    "jquery": "git://github.com/components/jquery.git#~1.8.1",
+    "json3": "git://github.com/bestiejs/json3.git#~3.2.4",
+    "underscore": "git://github.com/documentcloud/underscore.git#~1.4.4",
+    "es5-shim": "git://github.com/kriskowal/es5-shim.git#~2.0.8"
+    
+  },
+  "devDependencies": {
+  }
+}

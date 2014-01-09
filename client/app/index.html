@@ -28,18 +28,16 @@
         <script src="vendor/json3.min.js"></script>
         <![endif]-->
 
-            <ng-include src="'modules/common/partials/navigationbar.html'"> </ng-include>
-            <div ng-view></div>
+        <ng-include src="'modules/common/partials/navigationbar.html'"> </ng-include>
+        <div ng-view></div>
 
-        <!-- In production use:
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
-        -->
-        <script src="vendor/jquery.js"></script>
-        <script src="vendor/angular.js"></script>
-        <script src="vendor/underscore-min.js"></script>
+        <!-- TODO use CDN in production -->
+        <script src="components/jquery/jquery.js"></script>
+        <script src="components/angular/angular.js"></script>
+        <script src="components/angular-resource/angular-resource.js"></script>
+        <script src="components/underscore/underscore.js"></script>
 
         <!-- build:js scripts.js -->
-        <script src="vendor/base64.js"></script>
         <script src="modules/common/services/navigation-service.js"></script>
         <script src="modules/common/services/http-service.js"></script>
         <script src="modules/common/services/backend-service.js"></script>

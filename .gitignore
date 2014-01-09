@@ -12,3 +12,5 @@ nbproject
 .idea
 client/temp/
 client/dist/
+.tmp
+node_modules

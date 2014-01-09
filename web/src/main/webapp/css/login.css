@@ -1,0 +1,97 @@
+/**
+ * Copyright 2009-2012 Jayway Products AB. All Rights Reserved by Jayway Products AB.
+ *
+ * The content of this file is property of Jayway Products AB, org no 556777-9896, with the address
+ * Hans Michelsensgatan 9, SE-211 20 Malmö, Sweden. Any unauthorized review, use, disclosure
+ * or distribution is prohibited.
+ */
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+body {
+	color: #404040;
+	background: #e8e8e8;
+	height: 500px;
+}
+
+html {
+	font: 87.5%/1.5 "Roboto", Helvetica, Arial, sans-serif;
+	/* Base font size of 14px */
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+}
+
+h1 {
+	font-size: 1.6923em;
+	line-height: 1.25em;
+}
+
+#wrapper {
+	/* Center wrapper perfectly */
+	width: 300px;
+	height: 500px;
+	margin: 70px auto;
+}
+
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	background: #d7d7d7;
+	padding: 15px;
+}
+
+.header {
+	color: #000;
+	text-align: center;
+	height: 35px;
+}
+
+.content {
+	margin: 15px;
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+}
+
+input[type="text"],input[type="password"],textarea {
+	background-color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 0.5em;
+	margin-top: 15px;
+	width: 100%;
+}
+
+input,button,textarea,select {
+	font: 100%/1.3846 "Roboto", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+
+button {
+	background-color: #08c;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	padding: 4px 10px;
+}
+
+button:hover,button:focus {
+	background-color: #0af;
+	cursor: pointer;
+}
+
+a.btn {
+	background-color: #08c;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	padding: 0.25em 1em;
+	text-decoration: none;
+}
+}

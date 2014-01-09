@@ -5,9 +5,8 @@
 # Hans Michelsensgatan 9, SE-211 20 Malmö, Sweden. Any unauthorized review, use, disclosure
 # or distribution is prohibited.
 #
-
 rm -rf dist
-yeoman build
+grunt build
 rm -rf dist/api
 rm -f dist/mock.html
 # TODO remove not needed script since they are replaced by scripts.js
